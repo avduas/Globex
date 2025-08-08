@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Список сотрудников</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .person { margin-bottom: 6px; }
+  </style>
+</head>
+<body>
+  <h1>Список сотрудников</h1>
+
+  <%
+    var q = "for $r in collaborators return $r";
+    var res = XQuery(q);
+
+    for (rec in res) {
+  %>
+    <div class="person"><%= rec.fullname %></div>
+  <%
+    }
+  %>
+
+</body>
+</html>
